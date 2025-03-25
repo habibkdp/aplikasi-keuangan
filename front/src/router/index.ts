@@ -1,18 +1,8 @@
-import HelloWorld from "@/components/HelloWorld.vue";
-import Login from "@/components/Login.vue";
 import { createRouter, createWebHistory } from "vue-router";
+import authRoutes from './auth';
 
 const routes = [
-    {
-        path: '/login',
-        name: 'Login',
-        component: Login
-    },
-    {
-        path: '/dashboard',
-        name: 'Dashboard',
-        component: HelloWorld
-    },
+    ...authRoutes
 ]
 
 const router = createRouter({
