@@ -5,7 +5,9 @@ import { Loader2 } from 'lucide-vue-next';
 import { ref } from 'vue';
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { useRegisterStore } from './store/register';
 
+const registerStore = useRegisterStore();
 const processing = ref(false);
 const errors = ref<ErrorDataType>();
 const name = ref('');
@@ -29,6 +31,7 @@ function register() {
     .then(() => {
       errors.value = undefined;
 
+      registerStore.setStatus(true);
       router.push({ name: 'Login', replace:true });
     })
     .catch((res) => {

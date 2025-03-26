@@ -1,5 +1,5 @@
-import Login from "@/components/Login.vue";
-import Register from "@/components/Register.vue";
+import Login from "@/views/auth/Login.vue";
+import Register from "@/views/auth/Register.vue";
 
  export default [
     {

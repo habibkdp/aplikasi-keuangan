@@ -5,12 +5,10 @@ import { Loader2 } from 'lucide-vue-next';
 import { ref } from 'vue';
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import Success from './alerts/Success.vue'
+import Success from '@/components/alerts/Success.vue'
+import { useRegisterStore } from './store/register';
 
-defineProps<{
-  successRegister?: string | undefined
-}>();
-
+const registerStore = useRegisterStore();
 const processing = ref(false);
 const errors = ref<ErrorDataType>();
 const email = ref('');
@@ -46,9 +44,8 @@ function login() {
   <!-- component -->
   <div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
     <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
-      <Success v-if="successRegister"></Success>
+      <Success v-if="registerStore.status" :title="'Berhasil Registrasi!'" :message="'Silahkan login dengan akun anda'"></Success>
       <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Sign In</h2>
-      {{ successRegister ?? 'aowkaowkwaoakw' }}
       <form class="space-y-4" @submit.prevent="login">
         <div class="grid w-full max-w-sm items-center gap-1.5">
           <Label for="email">Email</Label>
