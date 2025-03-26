@@ -78,7 +78,7 @@ function register() {
 
       <div class="mt-6 text-center text-sm text-gray-600">
         Already have an account?
-        <a @click="router.push({name: 'Login'})" class="text-indigo-600 hover:text-indigo-500 font-medium">Sign in</a>
+        <a @click="router.push({name: 'Login'})" class="text-indigo-600 hover:text-indigo-500 font-medium cursor-pointer">Sign in</a>
       </div>
     </div>
   </div>

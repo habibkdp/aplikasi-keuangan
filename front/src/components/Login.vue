@@ -86,7 +86,7 @@ function login() {
       <div class="mt-6 text-center text-sm text-gray-600">
         Don't have an account?
         <span @click="router.push({ name: 'Register' })"
-          class="text-indigo-600 hover:text-indigo-500 font-medium cursor:pointer">Sign up</span>
+          class="text-indigo-600 hover:text-indigo-500 font-medium cursor-pointer">Sign up</span>
       </div>
     </div>
   </div>
