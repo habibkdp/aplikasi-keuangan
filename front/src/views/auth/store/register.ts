@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const useRegisterStore = defineStore('register', {
+export const useRegisterStore = defineStore('registerStore', {
     state: () => {
         return {
             status: false as boolean

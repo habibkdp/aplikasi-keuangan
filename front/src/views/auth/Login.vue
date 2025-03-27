@@ -7,8 +7,10 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Success from '@/components/alerts/Success.vue'
 import { useRegisterStore } from './store/register';
+import { useAuthStore } from './store/auth';
 
 const registerStore = useRegisterStore();
+const authStore = useAuthStore();
 const processing = ref(false);
 const errors = ref<ErrorDataType>();
 const email = ref('');
@@ -25,9 +27,10 @@ function login() {
     email: email.value,
     password: password.value
   })
-    .then(() => {
+    .then((res) => {
       errors.value = undefined;
 
+      authStore.setUser(res.data);
       router.push({ name: 'Dashboard', replace: true });
     })
     .catch((res) => {
