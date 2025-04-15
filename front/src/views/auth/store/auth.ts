@@ -11,6 +11,7 @@ export const useAuthStore = defineStore('authStore', {
     },
     actions: {
         setUser(data: ResponseDataType) {
+            localStorage.setItem('token', data.access_token);
             this.name = data.user.name;
             this.email = data.user.email;
             this.accessToken = data.access_token;

@@ -1,12 +1,12 @@
-import Index from "@/views/contents/dashboard/Index.vue";
+import DashboardIndex from "@/views/Dashboard/Index.vue";
 
  export default [
     {
         path: '/dashboard',
         name: 'Dashboard',
-        component: Index,
+        component: DashboardIndex,
         meta: {
-            // requiresAuth: true
+            requiresAuth: true
         }
     }
 ]
